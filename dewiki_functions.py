@@ -37,7 +37,7 @@ def save_article(article, savedir):
     doc = analyze_chunk(article)
     if doc:
         print('SAVING:', doc['title'])
-        filename = doc['id'] + '.json'
+        filename = doc['title'] + '.json'
         with open(savedir + filename, 'w', encoding='utf-8') as outfile:
             json.dump(doc, outfile, sort_keys=True, indent=1, ensure_ascii=False)
 
